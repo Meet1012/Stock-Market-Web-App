@@ -3,8 +3,8 @@ export const convertDatetoUnixTimestamp = (date) => {
 };
 
 export const convertUnixTimestamptoDate = (unixTimestamp) => {
-    const milliseconds = unixTimestamp * 1000
-    return new Date(milliseconds).toLocaleDateString();
+    const milliseconds = unixTimestamp
+    return new Date(milliseconds).toLocaleDateString("en-US");
 };
 
 export const createDate = (date, days, weeks, months, years) => {

@@ -2,7 +2,10 @@ import React, { useContext, useState } from 'react'
 import { XIcon, SearchIcon } from "@heroicons/react/solid"
 import SearchResults from './SearchResults';
 import ThemeContext from '../context/ThemeContext';
-import { searchSymbols } from '../api/stock-api';
+// import { searchSymbols } from '../api/stock-api';
+import { searchSymbols } from '../api/local-api';
+// import { mockSearchResults } from '../constant/mock';
+
 
 const Search = () => {
     const { darkMode } = useContext(ThemeContext);
@@ -15,15 +18,15 @@ const Search = () => {
 
     console.log(bestMatches)
 
-    const updateBestMatched = async() => {
-        try{
-            if (input){
+    const updateBestMatched = async () => {
+        try {
+            if (input) {
                 const searchResults = await searchSymbols(input);
                 const result = searchResults.result;
                 setBestMatches(result);
             }
         }
-        catch(error){
+        catch (error) {
             setBestMatches([]);
             console.log(error);
         };
@@ -49,6 +52,7 @@ const Search = () => {
                     </button>
                 )
             }
+
             <button onClick={updateBestMatched} className='h-8 w-8 bg-indigo-600 rounded-md flex justify-center items-center m-2 p-2 transition duration-200 hover:ring-2 ring-indigo-400'>
                 <SearchIcon className='h-4 w-4 fill-gray-100 ' />
             </button>

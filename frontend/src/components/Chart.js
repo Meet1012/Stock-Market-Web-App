@@ -14,12 +14,13 @@ import Card from './Card';
 import ChartFilter from './ChartFilter';
 import { chartConfig } from '../constant/config';
 import ThemeContext from '../context/ThemeContext';
-import { fetchHistoricalData } from '../api/stock-api';
+import { fetchHistoricalData } from '../api/local-api';
 // import { fetchHistoricalData } from '../api/alphavantage-api';
 import StockContext from '../context/StockContext';
+// import { mockHistoricalData } from '../constant/mock';
 
 const Chart = () => {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState({});
     const [filter, setFilter] = useState("1W");
 
     const { darkMode } = useContext(ThemeContext);
@@ -45,9 +46,6 @@ const Chart = () => {
                 const resolution = chartConfig[filter].resolution;
                 const result = await fetchHistoricalData(stockSymbol, resolution, startTimestampUnix, endTimestampUnix);
                 setData(formatData(result));
-
-                // const result = await fetchHistoricalData(stockSymbol, filter);
-                // setData(result);
             }
             catch (error) {
                 setData([]);
@@ -59,18 +57,21 @@ const Chart = () => {
     }, [stockSymbol, filter]);
 
     const formatData = (data) => {
-        console.log(data);
+        console.log(data.c);
         return data.c.map((item, index) => {
             return {
                 value: item.toFixed(2),
                 date: convertUnixTimestamptoDate(data.t[index])
+                
             };
         });
     };
 
+    
+
     return (
         <Card>
-            <ul className='flex absolute top-2 right-2 z-40'>
+            {/* <ul className='flex absolute top-2 right-2 z-40'>
                 {Object.keys(chartConfig).map((item) => {
                     return (
                         <li key={item}>
@@ -79,7 +80,7 @@ const Chart = () => {
                             }} />
                         </li>)
                 })}
-            </ul>
+            </ul> */}
             <ResponsiveContainer>
                 <AreaChart data={data}>
                     <defs>
@@ -94,7 +95,7 @@ const Chart = () => {
                     <Tooltip contentStyle={darkMode ? { backgroundColor: "#111827" } : null}
                         itemStyle={darkMode ? { color: "#818cf8" } : null} />
                     <XAxis dataKey={"date"} />
-                    <YAxis domain={["dataMax", "dataMin"]} />
+                    <YAxis domain={['dataMin - 50', 'dataMax + 50']} />
                 </AreaChart>
             </ResponsiveContainer>
         </Card>

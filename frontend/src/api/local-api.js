@@ -1,6 +1,6 @@
 // const basePath = "https://finnhub.io/api/v1"
 // const token = "cikjf0pr01qsrf88u96gcikjf0pr01qsrf88u970"
-const basePath = "http://192.168.1.4:8000"
+const basePath = "http://localhost:8001"
 
 // // ? Alphavantage
 // const basePath = "https://www.alphavantage.co"
@@ -19,7 +19,7 @@ export const searchSymbols = async (query) => {
 };
 
 export const fetchStockDetails = async (stockSymbol) => {
-    const url = `${basePath}/stock/profile2?symbol=${stockSymbol}&token=${token}`;
+    const url = `${basePath}/stock/profile2?symbol=${stockSymbol}`;
     const response = await fetch(url);
 
     if (!response.ok) {

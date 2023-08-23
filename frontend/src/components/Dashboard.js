@@ -5,7 +5,9 @@ import Overview from "./Overview";
 import Chart from "./Chart";
 import ThemeContext from "../context/ThemeContext";
 import StockContext from "../context/StockContext";
-import { fetchQuote, fetchStockDetails } from "../api/stock-api";
+import { fetchQuote, fetchStockDetails } from "../api/local-api";
+// import { mockStockQuote } from "../constant/mock";
+// import { mockCompanyDetails } from "../constant/mock";
 
 const Dashboard = () => {
     const { darkMode } = useContext(ThemeContext);

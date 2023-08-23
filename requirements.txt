@@ -1,0 +1,8 @@
+pip install -q yfinance
+pip install keras
+pip install tensorflow
+pip install pandas_datareader
+pip install yfinance
+pip install pycryptodome pycryptodomex
+pip uninstall --yes pandas-datareader
+pip install git+https://github.com/raphi6/pandas-datareader.git@ea66d6b981554f9d0262038aef2106dda7138316
