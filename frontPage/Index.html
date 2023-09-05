@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="prac.css">
+</head>
+<body>
+        <button class="button" onclick="openLink()"><span></span>Start</button>
+    </div>
+    <nav class="navbar background h-nav-resp">
+        <ul class="nav-list v-class-resp">
+            <div class="logo"><img src="logo.png" alt="logo"></div>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+          
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        
+    
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <section class="background firstSection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <p class="text-big">The Future of Stocks prediction is here</p>
+                <p class="text-small">In this world of  millions of people are investing in stocks we need to educate and make stock prediction for all of them. This is the
+                    future of an educated world and we are proud to say that the Future of Stock is here</p>
+                
+            </div>
+
+            <div class="secondHalf">
+                <img src="Population-Participatign-in-the-stock-market.jpg" alt="percentage">
+            </div>
+        </div>
+    </section>
+
+  <br>
+
+    <section class="section section-left" id="about">
+        <div class="paras">
+        <p class="sectionTag text-big">ABOUT US</p>
+        <p class="sectionSubTag text-small">Welcome to [Company Name], your trusted source for accurate and reliable stock market predictions. Our mission is to help individual and institutional investors make informed decisions and maximize their returns through our cutting-edge financial analysis and prediction methods.
+
+            We are a team of experienced financial analysts and data scientists who use a combination of technical analysis, fundamental analysis, and machine learning algorithms to deliver the most accurate and up-to-date stock market predictions. Our team stays on top of the latest trends and developments in the financial world to provide you with the insights you need to succeed in the stock market.
+            
+            At [Company Name], we are committed to transparency and honesty in all of our predictions and analysis. We strive to provide our clients with clear and concise information that they can use to make informed investment decisions. Our goal is to help you succeed in the stock market, and we believe that our commitment to accuracy and transparency sets us apart from the rest.
+            
+            Thank you for choosing [Company Name]. We look forward to helping you achieve your investment goals. If you have any questions or need assistance, please don't hesitate to contact us.
+            </p>
+        </div>
+         <div class="thumbnail">
+            <img src="about.jpg" alt="laptop image" class="prediction image">
+        </div> 
+    </section>
+    
+     <br>
+    <section class="contact" id="contact">
+        <h1 class="text-center">Contact Us</h1>
+        <div class="form">
+           
+                <form action="https://formspree.io/f/xlekjbgo" method="post">
+            <input class="form-input" type="text" name="name" id="name" placeholder="Enter Your name">
+            <input class="form-input" type="email" name="email" id="email" placeholder="Enter Your email">
+            <input class="form-input" type="text" name="phone" id="phone" placeholder="Enter Your Phone">
+             <textarea class="form-input" name="text" id="text" cols="30" rows="10" placeholder="Ellaborate your concern"></textarea>
+            <button class="btn btn-sm btn-dark">Submit</button>
+        </form>
+        </div>
+    </section>
+
+    <footer class="background">
+        <p class="text-footer">
+            Copyright &copy; 2023 Visualising And Forecasting Of Stocks
+        </p>
+    </footer>
+    <script>
+        function openLink() {
+            const url = 'http://localhost:3000';
+            window.location.href = url;
+        }
+    </script>
+
+
+    
+</body>
+</html>

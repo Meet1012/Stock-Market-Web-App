@@ -1,37 +1,38 @@
 import yfinance as yf
-import pandas as pd
 from datetime import datetime
 import json
+from model import predict_data
 
 yf.pdr_override()
 
 
 def fetchdata(symbol):
-
     end = datetime.now()
     start = datetime(end.year - 1, end.month, end.day)
 
     res = yf.download(symbol, start, end)
-
+    to_predict_data = res.filter(["Close"])
     parsed_data = res.to_json()
     actual_data = json.loads(parsed_data)
     closeres = list(actual_data["Close"].values())
-    closelst = [i for i in closeres]
+    closelst = [float(format(i,".2f")) for i in closeres]
     dateres = list(actual_data["Close"].keys())
     datelst = [int(i) for i in dateres]
+    p_value = predict_data(to_predict_data)
 
     data = {
-        "c": closelst,
-        "h": [0,1],
-        "l": [0,1],
+        "c": closelst[60:],
+        "h": [0, 1],
+        "l": [0, 1],
         "o": [221.03, 218.55, 220],
         "s": "ok",
-        "t": datelst,
+        "t": datelst[60:],
+        "p": p_value,
     }
     return data
 
+
 def fetchquote(stockSymbol):
-    
     end = datetime.now()
     start = datetime(end.year - 1, end.month, end.day)
 
@@ -43,24 +44,24 @@ def fetchquote(stockSymbol):
     closelst = [i for i in closeres]
     openres = list(actual_data["Open"].values())
     openlst = [int(i) for i in openres]
-    c,o = closelst[-1],openlst[-1]
-    diff = c-o
-    d = format(diff,".2f")
-    percent = (diff/o)*100
-    dp = format(percent,".2f")
-    
-    quotedata = {
-    "c": c,
-    "h": 263.31,
-    "l": 260.68,
-    "o": o,
-    "pc": 259.45,
-    "t": 328364823,
-    "d": d,
-    "dp": dp
-  }
-    return quotedata
+    c, o = closelst[-1], openlst[-1]
+    diff = c - o
+    d = format(diff, ".2f")
+    percent = (diff / o) * 100
+    dp = format(percent, ".2f")
+    pc_value = format(closelst[-1], ".2f")
 
+    quotedata = {
+        "c": c,
+        "h": 263.31,
+        "l": 260.68,
+        "o": o,
+        "pc": pc_value,
+        "t": 328364823,
+        "d": d,
+        "dp": dp,
+    }
+    return quotedata
 
 
 detaildata = {
