@@ -5,7 +5,7 @@ from keras.models import load_model
 from pandas_datareader import data as pdr
 from datetime import datetime
 
-model = load_model("C:/Users/meet2/OneDrive/Desktop/Python/stock market/stock_pred.h5")
+model = load_model("C:/Users/meet2/OneDrive/Desktop/Projects/React_Projects/stock_market/backend_API/stock_pred.h5")
 
 def rough():
     p = np.random.random((250,1))
