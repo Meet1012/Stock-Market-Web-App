@@ -6,6 +6,6 @@ pandas
 pydantic
 pydantic_core
 pypi-json
-sklearn
+scikit-learn
 yfinance
 uvicorn
