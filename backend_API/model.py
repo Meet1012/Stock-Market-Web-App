@@ -1,16 +1,9 @@
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
-import cv2
+from keras.models import load_model
 
-# model = load_model("C:/Users/meet2/OneDrive/Desktop/Projects/React_Projects/stock_market/backend_API/stock_pred.h5")
+model = load_model("C:/Users/meet2/OneDrive/Desktop/Projects/React_Projects/stock_market/backend_API/stock_pred.h5")
 
-model = cv2.dnn.readNetFromTensorflow('C:\\Users\\meet2\\OneDrive\\Desktop\\React_Projects\\stock_market\\backend_API\\stock_pred.h5')
- 
-
-def rough():
-    p = np.random.random((250,1))
-    p.shape
-    np.expand_dims(p[-60:],axis=0).shape
 
 def predict_data(data):
     dataset = data.values

@@ -6,6 +6,9 @@ pydantic==2.3.0
 pydantic_core==2.6.3
 opencv-python
 pypi-json
+tensorflow
+sklearn
+keras
 scikit-learn
 yfinance
 uvicorn
