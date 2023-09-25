@@ -2,7 +2,7 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 from keras.models import load_model
 
-model = load_model("backend_API\stock_pred.h5")
+model = load_model("stock_pred.h5")
 
 
 def predict_data(data):
