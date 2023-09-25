@@ -5,6 +5,7 @@ numpy
 pandas
 pydantic==2.3.0
 pydantic_core==2.6.3
+tensorflow
 pypi-json
 scikit-learn
 yfinance
