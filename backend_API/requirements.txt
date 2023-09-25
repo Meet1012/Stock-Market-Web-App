@@ -7,8 +7,8 @@ pydantic_core==2.6.3
 opencv-python
 pypi-json
 tensorflow
+scikit-learn
 sklearn
 keras
-scikit-learn
 yfinance
 uvicorn
