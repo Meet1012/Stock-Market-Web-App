@@ -3,8 +3,8 @@ fastapi[all]
 keras
 numpy
 pandas
-pydantic
-pydantic_core
+pydantic==2.3.0
+pydantic_core==2.6.3
 pypi-json
 scikit-learn
 yfinance
