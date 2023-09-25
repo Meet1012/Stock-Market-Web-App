@@ -8,7 +8,6 @@ opencv-python
 pypi-json
 tensorflow
 scikit-learn
-sklearn
 keras
 yfinance
 uvicorn
