@@ -2,7 +2,7 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 from keras.models import load_model
 
-model = load_model("C:/Users/meet2/OneDrive/Desktop/Projects/React_Projects/stock_market/backend_API/stock_pred.h5")
+model = load_model("C:\\Users\\meet2\\OneDrive\\Desktop\\Projects\\React_Projects\\stock_market\\backend_API\\stock_pred.h5")
 
 
 def predict_data(data):
@@ -19,4 +19,3 @@ def predict_data(data):
     all_predicted = scaler.inverse_transform(predicted)
     lst = [float(i) for i in all_predicted[:]]
     return lst
-
