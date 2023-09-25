@@ -4,7 +4,7 @@ import cv2
 
 # model = load_model("C:/Users/meet2/OneDrive/Desktop/Projects/React_Projects/stock_market/backend_API/stock_pred.h5")
 
-model = cv2.dnn.readNetFromTensorflow('C:\Users\meet2\OneDrive\Desktop\Projects\React_Projects\stock_market\backend_API\stock_pred.h5')
+model = cv2.dnn.readNetFromTensorflow('C:\\Users\\meet2\\OneDrive\\Desktop\\React_Projects\\stock_market\\backend_API\\stock_pred.h5')
  
 
 def rough():
