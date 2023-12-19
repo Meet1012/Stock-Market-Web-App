@@ -14,7 +14,7 @@ const SearchResults = ({ results }) => {
           setStockSymbol(item.symbol)
         }}>
           <span>{item.symbol}</span>
-          <span>{item.description}</span>
+          <span>{item.description.toUpperCase()}</span>
         </li>
       })}
     </ul>

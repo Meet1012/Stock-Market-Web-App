@@ -72,7 +72,7 @@ const Chart = () => {
         return data.p.map((item, index) => {
             return {
                 value: item.toFixed(2),
-                date: convertUnixTimestamptoDate(data.t[index])
+                date: convertUnixTimestamptoDate(data.t[index] + 432750000)
 
             };
         });
